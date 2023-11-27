@@ -1,0 +1,30 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.notavif.notwebp .escuela{
+    @include m.bgImage("../img/chef_bg.jpg");
+}
+.webp .escuela{
+    @include m.bgImage("../img/chef_bg.webp");
+}
+.avif .escuela{
+    @include m.bgImage("../img/chef_bg.avif");
+}
+.escuela{
+    padding: 20rem 0;
+    text-align: center;
+    color: v.$blanco;
+    &__heading{
+        font-size: 4rem;
+        font-weight: 700;
+    }
+    &__texto{
+        text-align: center;
+        font-size: 2.6rem;
+        max-width: 48rem;
+        margin: 0 auto;
+    }
+    &__enlace{
+        @include m.boton(v.$primario,v.$blanco);
+    }
+}

@@ -1,0 +1,68 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.notavif.notwebp .classes{
+    &__heading{
+        @include m.heading;
+    }
+}
+.webp .classes{
+    &__heading{
+        @include m.heading(webp);
+    }
+}
+.avif .classes{
+    &__heading{
+        @include m.heading(avif);
+    }
+}
+.classes{
+    padding: 5rem 0;
+    background-color: v.$gris;
+    &__grid{
+        @include m.grid(1,2rem);
+        @include m.tablet{  
+            @include m.grid(3,2rem);
+            align-items: flex-start;
+        }
+    }
+}
+.clase{
+    border: .1rem solid darken(v.$gris,10%);
+
+    &__grafico{
+        background-color: v.$primario;
+    }
+    &__meta{
+        padding: 0 1rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__fecha{
+        color: v.$blanco;
+    }
+    &__precio{
+        color: v.$negro;
+        font-weight: 700;
+        background-color: v.$secundario;
+        border-radius: 1rem;
+        padding: .2rem
+    }
+    &__informacion{
+        background-color: v.$blanco;
+        padding: 2rem;
+    }
+    &__nombre{
+        font-weight: 700;
+        min-height: 5.5rem;
+    }
+    &__descripcion{
+        color: v.$primario;
+    }
+    &__enlace{
+        @include m.boton(v.$primario,v.$blanco);
+        display: block;
+        font-size: 1.6rem;
+        padding: 1rem;
+    }
+}

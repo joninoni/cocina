@@ -1,0 +1,72 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.bloques{
+    &__grid{
+        @include m.tablet{  
+            @include m.grid(2,0rem);
+            grid-auto-flow: dense;
+        }
+    }
+}
+.notavif.notwebp .bloque{
+    &:nth-child(2){
+        &:nth-child(2){
+            @include m.bgImage("../img/bloque_1.jpg");
+        }
+    }
+    &:nth-child(4){
+        @include m.bgImage("../img/bloque_2.jpg");
+    }
+}
+.webp .bloque{
+    &:nth-child(2){
+        &:nth-child(2){
+            @include m.bgImage("../img/bloque_1.webp");
+        }
+    }
+    &:nth-child(4){
+        @include m.bgImage("../img/bloque_2.webp");
+    }
+}
+.avif .bloque{
+    &:nth-child(2){
+        &:nth-child(2){
+            @include m.bgImage("../img/bloque_1.avif");
+        }
+    }
+    &:nth-child(4){
+        @include m.bgImage("../img/bloque_2.avif");
+    }
+}
+.bloque{
+    height: 40rem;
+    border: .5rem solid v.$blanco;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: v.$blanco;
+    &:nth-child(1){
+        background-color: v.$primario;
+    }
+    &:nth-child(3){
+        background-color: v.$secundario;
+        @include m.tablet{  
+            grid-column: 2/3;   
+        }        
+    }
+    &__contenido{
+        max-width: 40rem;
+        border-block: .2rem solid v.$blanco;
+        padding: 1rem 0;
+    }
+    &__heading{
+        text-transform: uppercase;
+    }
+    &__texto{
+        font-size: 2rem;
+    }
+}
